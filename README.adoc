@@ -2,3 +2,57 @@
 
 This is https://antora.org/[Antora] playbook project for
 https://tackler.e257.fi/docs/[Tackler] documentation.
+
+== Documentation Toolchain
+
+The documentation is generated with https://antora.org/[Antora] toolchain.
+
+=== Running Antora
+
+You can either https://docs.antora.org/antora/latest/install-and-run-quickstart/[install Antora locally], 
+or use the docker image:
+
+The docker image is preferred way - it's super simple, just run:
+
+----
+podman run -v $PWD:$PWD:Z -w $PWD  --rm -t antora/antora antora-playbook.yml
+----
+
+Or locally
+
+----
+podman run -v $PWD:$PWD:Z -w $PWD  --rm -t antora/antora local-antora-playbook.yml
+----
+
+=== UI
+
+You don't have build UI by default. Only reason to build UI is if you have to modify it.
+
+The code for UI is located here:
+
+----
+git clone https://github.com/tackler-ng/antora-ui-tackler
+----
+
+==== UI Bundle
+
+If you don't have `node` environment installed, easiest way 
+to generate UI is build it in side container:
+ 
+----
+podman run --publish 127.0.0.1:5252:5252 -v $PWD:$PWD:Z -w $PWD  --rm -it node:22-alpine ash
+----
+
+Then inside the container:
+
+----
+npm install
+npx gulp preview
+npx gulp bundle
+----
+
+
+== License
+
+Tackler documentation is licensed under the link:./LICENSE[Apache License, version 2.0].
+

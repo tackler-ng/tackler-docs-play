@@ -1,0 +1,34 @@
+site:
+  title: Tackler // Docs
+  url: https://tackler.e257.fi/docs
+  start_page: tackler::tour-of-tackler.adoc
+urls:
+    latest_version_segment: 'latest'
+    html_extension_style: default
+content:
+  sources:
+  - url: ./workspace/tackler
+    branches: [ HEAD ]
+    start_path: docs
+asciidoc:
+  attributes:
+    experimental: ''
+    idprefix: ''
+    idseparator: '-'
+    page-pagination: ''
+    github-link: "link:https://github.com/tackler-ng/tackler/blob/main"
+    repolink: "link:/repo"
+    siterepolink: "link:/repo"
+    regex-link: "https://docs.rs/regex/latest/regex/#syntax"
+    icons: font
+antora:
+  extensions:
+  - require: '@antora/lunr-extension'
+    index_latest_only: true
+ui:
+  bundle:
+    #url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    url: ./workspace/ui-bundle.zip
+    snapshot: true
+runtime:
+  cache_dir: ./.cache/antora
