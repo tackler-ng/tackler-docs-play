@@ -1,7 +1,7 @@
 site:
   title: Tackler // Docs
   url: https://tackler.e257.fi/docs
-  start_page: tackler::tour-of-tackler.adoc
+  start_page: tackler::index.adoc
 urls:
     latest_version_segment: 'latest'
     html_extension_style: indexify
