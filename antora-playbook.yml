@@ -31,3 +31,4 @@ ui:
     snapshot: true
 runtime:
   cache_dir: ./.cache/antora
+  fetch: true

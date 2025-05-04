@@ -1,4 +1,5 @@
 /.cache/
+/bin/
 /build/
 /node_modules/
 /workspace/
