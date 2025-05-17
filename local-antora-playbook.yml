@@ -1,6 +1,6 @@
 site:
   title: Tackler // Docs
-  url: https://tackler.e257.fi/docs
+  url: https://tackler.fi/docs
   start_page: tackler::index.adoc
 urls:
     latest_version_segment: 'latest'
