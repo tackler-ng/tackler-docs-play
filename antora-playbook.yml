@@ -27,7 +27,7 @@ antora:
     index_latest_only: true
 ui:
   bundle:
-    url: ./workspace/ui-bundle.zip
+    url: https://tackler.fi/dist/ui-bundle-8d1ebd4451448b9.zip
     snapshot: true
 runtime:
   cache_dir: ./.cache/antora
