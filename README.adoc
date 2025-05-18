@@ -1,7 +1,7 @@
 = Tackler Documentation Playbook
 
 This is https://antora.org/[Antora] playbook project for
-https://tackler.e257.fi/docs/[Tackler] documentation.
+https://tackler.fi/docs/[Tackler] documentation.
 
 == Documentation Toolchain
 
