@@ -16,10 +16,6 @@ asciidoc:
     idprefix: ''
     idseparator: '-'
     page-pagination: ''
-    github-link: "link:https://github.com/tackler-ng/tackler/blob/main"
-    repolink: "link:/repo"
-    siterepolink: "link:/repo"
-    regex-link: "https://docs.rs/regex/latest/regex/#syntax"
     icons: font
 antora:
   extensions:
@@ -28,7 +24,7 @@ antora:
 ui:
   bundle:
     url: https://tackler.fi/dist/ui-bundle-8d1ebd4451448b9.zip
-    snapshot: true
+    snapshot: false
 runtime:
   cache_dir: ./.cache/antora
   fetch: true
