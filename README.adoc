@@ -5,20 +5,43 @@ https://tackler.fi/docs/[Tackler] documentation.
 
 == Documentation Toolchain
 
-The documentation is generated with https://antora.org/[Antora] toolchain.
+The Tackler documentation is generated with https://antora.org/[Antora] toolchain.
 
 === Running Antora
 
 You can either https://docs.antora.org/antora/latest/install-and-run-quickstart/[install Antora locally], 
-or use the docker image:
+or use the container image.
 
-The docker image is preferred way - it's super simple, just run:
+==== Lunr search extension
+
+In both cases, you have to first install an Antora extension for Lunr search engine:
+
+.Lunr with antora local installation
+----
+npm i @antora/lunr-extension
+----
+
+.Lunr with Antora container image
+----
+podman run -v $PWD:$PWD:Z -w $PWD  --rm -t antora/antora npm i @antora/lunr-extension
+----
+
+The container image is preferred way - it's super simple, just run:
 
 ----
 podman run -v $PWD:$PWD:Z -w $PWD  --rm -t antora/antora antora-playbook.yml
 ----
 
-Or locally
+This will use published versions for documentation sources and UI toolkit 
+from Github repositories.
+
+Use following command to build the documentation from locally edited sources.
+ 
+Before that you have to have documentation source code available as `workspace/tackler`, 
+and UI-bundle as `workspace/ui-bundle.zip`. See UI section below for details.
+
+The actual source for tackler documentation is available at 
+https://github.com/tackler-ng/tackler-docs[tackler-ng/tackler-docs].
 
 ----
 podman run -v $PWD:$PWD:Z -w $PWD  --rm -t antora/antora local-antora-playbook.yml
@@ -28,7 +51,9 @@ podman run -v $PWD:$PWD:Z -w $PWD  --rm -t antora/antora local-antora-playbook.y
 
 You don't have build UI by default. Only reason to build UI is if you have to modify it.
 
-The code for UI is located here:
+You can download ui-bundle from URL listed in the `antora-playbook.yml` or you can build it locally.
+
+The UI code is located here:
 
 ----
 git clone https://github.com/tackler-ng/antora-ui-tackler
